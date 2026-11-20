@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#FFC400">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>App de campo</title>
+<style>
+:root{--bg:#fff;--fg:#141414;--mute:#5F6368;--tile:#F2F3F4;--line:#DADCDF;--y:#FFC400;--ok:#17803D;--okbg:#E6F4EA;--warn:#B42318}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;padding:8px max(16px,env(safe-area-inset-right)) 24px max(16px,env(safe-area-inset-left))}
+#app{max-width:440px;margin:0 auto;min-height:calc(100vh - 40px);display:flex;flex-direction:column;gap:14px}
+button,input{font-family:inherit;color:var(--fg)}
+button{cursor:pointer}
+h1{margin:0;font-size:34px;line-height:1.05;font-weight:800}
+.back{display:flex;align-items:center;gap:6px;height:44px;border:0;background:none;font-size:20px;font-weight:700;padding:0}
+.step{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:700;margin-bottom:8px}
+.step b{width:28px;height:28px;border-radius:50%;background:var(--fg);color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800}
+.grid{display:grid;gap:10px}
+.tile{border-radius:16px;border:3px solid var(--line);background:var(--tile);font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px;position:relative;min-width:0}
+.tile.on{background:var(--y);border-color:var(--fg)}
+.big{width:100%;height:88px;border-radius:20px;border:0;font-size:30px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:12px}
+.pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:6px 14px;font-size:16px;font-weight:700}
+.note{display:flex;gap:12px;align-items:center;background:var(--tile);border-radius:16px;padding:14px 16px;font-size:17px;font-weight:500;line-height:1.2}
+.gate{margin-top:auto}
+.falta{min-height:76px;border-radius:20px;border:3px dashed #9AA0A6;background:var(--tile);display:flex;align-items:center;justify-content:center;gap:10px;padding:8px 14px;font-size:21px;font-weight:700;line-height:1.1;text-align:center}
+.send{height:76px;border-radius:20px;border:0;background:var(--ok);color:#fff;font-size:32px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:12px;width:100%}
+.disp{height:64px;border-radius:14px;border:3px solid var(--fg);background:var(--tile);display:flex;align-items:center;justify-content:flex-end;padding:0 18px;font-size:38px;font-weight:800}
+.keys{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.key{height:50px;border-radius:12px;border:2px solid var(--line);background:var(--tile);font-size:26px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.hist{display:flex;flex-direction:column;gap:6px}
+.hrow{display:flex;gap:10px;align-items:center;font-size:16px;font-weight:600;border-top:1px solid var(--line);padding-top:8px}
+.thumb{width:40px;height:40px;border-radius:8px;object-fit:cover;flex-shrink:0}
+input.txt{width:100%;height:64px;border-radius:14px;border:3px solid var(--fg);padding:0 16px;font-size:28px;font-weight:700}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<input id="cam" type="file" accept="image/*" capture="environment" hidden>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
